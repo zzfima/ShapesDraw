@@ -34,6 +34,9 @@ namespace ShapesDraw
             this.shapeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bitmapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.circleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +47,7 @@ namespace ShapesDraw
             this.shapeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,11 +58,15 @@ namespace ShapesDraw
             this.bitmapToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.shapeToolStripMenuItem.Name = "shapeToolStripMenuItem";
-            this.shapeToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.shapeToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
             this.shapeToolStripMenuItem.Text = "File";
             // 
             // shapeToolStripMenuItem1
             // 
+            this.shapeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.circleToolStripMenuItem,
+            this.squareToolStripMenuItem,
+            this.lineToolStripMenuItem});
             this.shapeToolStripMenuItem1.Name = "shapeToolStripMenuItem1";
             this.shapeToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.shapeToolStripMenuItem1.Text = "Shape";
@@ -77,6 +84,24 @@ namespace ShapesDraw
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // circleToolStripMenuItem
+            // 
+            this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
+            this.circleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.circleToolStripMenuItem.Text = "Circle";
+            // 
+            // squareToolStripMenuItem
+            // 
+            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
+            this.squareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.squareToolStripMenuItem.Text = "Square";
+            // 
+            // lineToolStripMenuItem
+            // 
+            this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
+            this.lineToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lineToolStripMenuItem.Text = "Line";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,7 +110,7 @@ namespace ShapesDraw
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Test Program";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -100,6 +125,9 @@ namespace ShapesDraw
         private System.Windows.Forms.ToolStripMenuItem shapeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem bitmapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem circleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
     }
 }
 
