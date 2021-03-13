@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShapesDraw
@@ -26,8 +27,9 @@ namespace ShapesDraw
         }
 
 
-        //Clear Activation of all menues
-        private void ClearAllMenues()
+        #region Menu treatment
+        //Clear Activation of all menus
+        private void ClearAllMenus()
         {
             circleToolStripMenuItem.Checked = false;
             squareToolStripMenuItem.Checked = false;
@@ -38,25 +40,30 @@ namespace ShapesDraw
         //Activate Circle menu
         private void circleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllMenues();
+            ClearAllMenus();
             circleToolStripMenuItem.Checked = true;
         }
+
+        //Activate Square menu
         private void squareToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllMenues();
+            ClearAllMenus();
             squareToolStripMenuItem.Checked = true;
         }
 
+        //Activate Line menu
         private void lineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllMenues();
+            ClearAllMenus();
             lineToolStripMenuItem.Checked = true;
         }
 
+        //Activate Bitmap menu
         private void bitmapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllMenues();
+            ClearAllMenus();
             bitmapToolStripMenuItem.Checked = true;
-        }
+        } 
+        #endregion
     }
 }
