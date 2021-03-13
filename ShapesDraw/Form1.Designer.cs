@@ -57,8 +57,9 @@ namespace ShapesDraw
             this.shapeToolStripMenuItem1,
             this.bitmapToolStripMenuItem,
             this.exitToolStripMenuItem});
+            this.shapeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.shapeToolStripMenuItem.Name = "shapeToolStripMenuItem";
-            this.shapeToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
+            this.shapeToolStripMenuItem.Size = new System.Drawing.Size(44, 26);
             this.shapeToolStripMenuItem.Text = "File";
             // 
             // shapeToolStripMenuItem1
@@ -67,18 +68,22 @@ namespace ShapesDraw
             this.circleToolStripMenuItem,
             this.squareToolStripMenuItem,
             this.lineToolStripMenuItem});
+            this.shapeToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.shapeToolStripMenuItem1.Name = "shapeToolStripMenuItem1";
             this.shapeToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.shapeToolStripMenuItem1.Text = "Shape";
             // 
             // bitmapToolStripMenuItem
             // 
+            this.bitmapToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bitmapToolStripMenuItem.Name = "bitmapToolStripMenuItem";
             this.bitmapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bitmapToolStripMenuItem.Text = "Bitmap";
+            this.bitmapToolStripMenuItem.Click += new System.EventHandler(this.bitmapToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -89,18 +94,21 @@ namespace ShapesDraw
             this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
             this.circleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.circleToolStripMenuItem.Text = "Circle";
+            this.circleToolStripMenuItem.Click += new System.EventHandler(this.circleToolStripMenuItem_Click);
             // 
             // squareToolStripMenuItem
             // 
             this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
             this.squareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.squareToolStripMenuItem.Text = "Square";
+            this.squareToolStripMenuItem.Click += new System.EventHandler(this.squareToolStripMenuItem_Click);
             // 
             // lineToolStripMenuItem
             // 
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
             this.lineToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.lineToolStripMenuItem.Text = "Line";
+            this.lineToolStripMenuItem.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
             // 
             // Form1
             // 
