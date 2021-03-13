@@ -102,14 +102,30 @@ namespace ShapesDraw
             base.OnMouseUp(e);
             _endPoint = e.Location;
 
-            NewFigureTreatment();
+            //Check if it new figure or color dialog
+            if (circleToolStripMenuItem.Checked ||
+                squareToolStripMenuItem.Checked ||
+                lineToolStripMenuItem.Checked)
+            {
+                NewFigureTreatment();
+            }
+            else
+            {
+                foreach (var fig in this._drawableElements)
+                {
+                    if (
+                        Math.Abs(fig.StartPoint.X - _endPoint.X) <= 5 &&
+                        Math.Abs(fig.StartPoint.Y - _endPoint.Y) <= 5)
+                    {
+                        //Coloring
+                    }
+                }
+            }
         }
 
         //Adding new figure to Form
         private void NewFigureTreatment()
         {
-            bool isNewFigureAdded = true;
-
             if (circleToolStripMenuItem.Checked)
             {
                 IDrawableElement element = new DrawableCircle(_startPoint, _endPoint);
@@ -125,15 +141,8 @@ namespace ShapesDraw
                 IDrawableElement element = new DrawableLine(_startPoint, _endPoint);
                 _drawableElements.Add(element);
             }
-            else
-            {
-                isNewFigureAdded = false;
-            }
 
-            if (isNewFigureAdded)
-            {
-                this.Invalidate();
-            }
+            this.Invalidate();
         }
     }
 }

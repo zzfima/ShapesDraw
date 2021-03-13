@@ -6,19 +6,19 @@ namespace ShapesDraw
     public class DrawableLine : IDrawableElement
     {
         #region Properties
-        private Point _startPoint { get; set; }
+        public Point StartPoint { get; set; }
         private Point _endPoint { get; set; }
         #endregion
 
         public DrawableLine(Point startPoint, Point endPoint)
         {
-            _startPoint = startPoint;
+            StartPoint = startPoint;
             _endPoint = endPoint;
         }
 
         public void Draw(PaintEventArgs e)
         {
-            e.Graphics.DrawLine(Pens.Black, _startPoint, _endPoint);
+            e.Graphics.DrawLine(Pens.Black, StartPoint, _endPoint);
         }
     }
 }

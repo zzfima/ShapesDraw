@@ -6,7 +6,7 @@ namespace ShapesDraw
     public class DrawableCircle : IDrawableElement
     {
         #region Properties
-        private Point _startPoint { get; set; }
+        public Point StartPoint { get; set; }
         private Point _endPoint { get; set; }
         #endregion
 
@@ -15,21 +15,21 @@ namespace ShapesDraw
             //Choose who is start point and who is end point
             if (pointA.X < pointB.X)
             {
-                _startPoint = pointA;
+                StartPoint = pointA;
                 _endPoint = pointB;
             }
             else
             {
-                _startPoint = pointB;
+                StartPoint = pointB;
                 _endPoint = pointA;
             }
         }
 
         public void Draw(PaintEventArgs e)
         {
-            int side = _endPoint.X - _startPoint.X;
+            int side = _endPoint.X - StartPoint.X;
             Size size = new Size(side, side);
-            Rectangle rect = new Rectangle(_startPoint, size);
+            Rectangle rect = new Rectangle(StartPoint, size);
             e.Graphics.DrawEllipse(Pens.Black, rect);
         }
     }
