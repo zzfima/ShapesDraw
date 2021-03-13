@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,9 +7,30 @@ namespace ShapesDraw
 {
     public partial class Form1 : Form
     {
+        #region Properties
+        private Point _startPoint { get; set; }
+        private Point _endPoint { get; set; }
+        private IList<IDrawableElement> _drawableElements { get; set; }
+        #endregion
+
+        //Ctor
         public Form1()
         {
             InitializeComponent();
+            _drawableElements = new List<IDrawableElement>();
+            ResizeRedraw = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Paint += Form1_Paint;
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (var fig in this._drawableElements)
+            {
+                fig.Draw(e);
+            }
         }
 
         //Close Application
@@ -63,7 +85,55 @@ namespace ShapesDraw
         {
             ClearAllMenus();
             bitmapToolStripMenuItem.Checked = true;
-        } 
+        }
         #endregion
+
+        //Start click
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            _startPoint = e.Location;
+        }
+
+        //End Click
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            _endPoint = e.Location;
+
+            NewFigureTreatment();
+        }
+
+        //Adding new figure to Form
+        private void NewFigureTreatment()
+        {
+            bool isNewFigureAdded = true;
+
+            if (circleToolStripMenuItem.Checked)
+            {
+
+            }
+            else if (squareToolStripMenuItem.Checked)
+            {
+
+            }
+            else if (lineToolStripMenuItem.Checked)
+            {
+
+            }
+            else if (bitmapToolStripMenuItem.Checked)
+            {
+
+            }
+            else
+            {
+                isNewFigureAdded = false;
+            }
+
+            if (isNewFigureAdded)
+            {
+                this.Invalidate();
+            }
+        }
     }
 }
