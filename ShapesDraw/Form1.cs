@@ -111,7 +111,8 @@ namespace ShapesDraw
 
             if (circleToolStripMenuItem.Checked)
             {
-
+                IDrawableElement element = new DrawableCircle(_startPoint, _endPoint);
+                _drawableElements.Add(element);
             }
             else if (squareToolStripMenuItem.Checked)
             {
