@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace ShapesDraw
@@ -11,6 +12,7 @@ namespace ShapesDraw
         private Point _startPoint { get; set; }
         private Point _endPoint { get; set; }
         private IList<IDrawableElement> _drawableElements { get; set; }
+        private BitmapSaver _bitmapSaver { get; set; }
         #endregion
 
         //Ctor
@@ -19,6 +21,7 @@ namespace ShapesDraw
             InitializeComponent();
             _drawableElements = new List<IDrawableElement>();
             ResizeRedraw = true;
+            _bitmapSaver = new BitmapSaver(@"C:\temp\testbmp.bmp");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,7 +59,6 @@ namespace ShapesDraw
             circleToolStripMenuItem.Checked = false;
             squareToolStripMenuItem.Checked = false;
             lineToolStripMenuItem.Checked = false;
-            bitmapToolStripMenuItem.Checked = false;
         }
 
         //Activate Circle menu
@@ -83,8 +85,7 @@ namespace ShapesDraw
         //Activate Bitmap menu
         private void bitmapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllMenus();
-            bitmapToolStripMenuItem.Checked = true;
+            _bitmapSaver.Save(this);
         }
         #endregion
 
@@ -123,10 +124,6 @@ namespace ShapesDraw
             {
                 IDrawableElement element = new DrawableLine(_startPoint, _endPoint);
                 _drawableElements.Add(element);
-            }
-            else if (bitmapToolStripMenuItem.Checked)
-            {
-
             }
             else
             {

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawableBitmap.cs" />
     <Compile Include="DrawableCircle.cs" />
     <Compile Include="DrawableLine.cs" />
     <Compile Include="DrawableSquare.cs" />
