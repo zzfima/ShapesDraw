@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 
 namespace ShapesDraw
@@ -17,11 +16,6 @@ namespace ShapesDraw
             if (!fileInfo.Directory.Exists)
             {
                 fileInfo.Directory.Create();
-            }
-
-            if (!fileInfo.Exists)
-            {
-                fileInfo.Create();
             }
 
             _file = fileInfo;
