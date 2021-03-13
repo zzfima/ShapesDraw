@@ -115,7 +115,8 @@ namespace ShapesDraw
             }
             else if (squareToolStripMenuItem.Checked)
             {
-
+                IDrawableElement element = new DrawableSquare(_startPoint, _endPoint);
+                _drawableElements.Add(element);
             }
             else if (lineToolStripMenuItem.Checked)
             {
