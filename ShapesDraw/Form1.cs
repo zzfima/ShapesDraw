@@ -119,7 +119,8 @@ namespace ShapesDraw
             }
             else if (lineToolStripMenuItem.Checked)
             {
-
+                IDrawableElement element = new DrawableLine(_startPoint, _endPoint);
+                _drawableElements.Add(element);
             }
             else if (bitmapToolStripMenuItem.Checked)
             {
